@@ -36,12 +36,11 @@ public class EnemySpawner : MonoBehaviour
     {
         float radius = Random.Range(minRadius, maxRadius) * radiusSpacing;
         int angleDeg = 90 - ((int)Random.Range((int)-90/angleSpacing, (int)91/angleSpacing) * angleSpacing);
-        Debug.Log(angleDeg);
         float angleRad = angleDeg * Mathf.Deg2Rad;
         float positionX = radius * Mathf.Cos(angleRad);
         float positionZ = radius * Mathf.Sin(angleRad);
 
-        return new Vector3(positionX, 0.6f,positionZ);
+        return new Vector3(positionX, 0.8f,positionZ);
 
     }
 

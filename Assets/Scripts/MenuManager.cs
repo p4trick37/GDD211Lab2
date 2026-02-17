@@ -3,12 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [Header("Button References")]
-    [SerializeField] private GameObject startButton;
-    [SerializeField] private GameObject howToPlayButotn;
-    [SerializeField] private GameObject controlsButton;
-    [SerializeField] private GameObject exitButton;
+    [Header("Menu References")]
+    [SerializeField] private GameObject startMenu;
+    [SerializeField] private GameObject howToMenu;
 
+    public void Start()
+    {
+        GoToStartMenu();
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
@@ -16,16 +18,17 @@ public class MenuManager : MonoBehaviour
 
     public void GoToHowToPlay()
     {
-
+        startMenu.SetActive(false);
+        howToMenu.SetActive(true);
     }
-
-    public void GoToControls()
-    {
-
-    }
-
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void GoToStartMenu()
+    {
+        startMenu.SetActive(true);
+        howToMenu.SetActive(false);
     }
 }
